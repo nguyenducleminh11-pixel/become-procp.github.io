@@ -3,87 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CP Handbook - Lộ trình luyện tập</title>
+    <title>CP Roadmap</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .roadmap-line {
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            background: #cbd5e1;
+            top: 0;
+            bottom: 0;
+            z-index: 0;
+            transform: translateX(-50%);
+        }
+        .node-box {
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .node-box:hover { transform: scale(1.02); }
+        .skill-tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-100 py-10">
 
-    <header class="bg-indigo-700 text-white py-12 mb-10 shadow-lg">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-2 uppercase tracking-widest">Competitive Programming Handbook</h1>
-            <p class="text-indigo-100 italic">Hệ thống hóa kiến thức thuật toán và cấu trúc dữ liệu</p>
-        </div>
+    <header class="text-center mb-16">
+        <h1 class="text-4xl font-black text-slate-800 uppercase tracking-tighter">CP Learning Roadmap</h1>
+        <p class="text-slate-500 mt-2">Dựa trên cấu trúc file và lộ trình chuẩn Competitive Programming</p>
     </header>
 
-    <main class="container mx-auto px-4 pb-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-brain mr-2 text-red-500"></i> Dynamic Programming (DP)</h2>
-                <ul class="space-y-2">
-                    <li><a href="dp/bitmask.html" class="hover:text-red-500 transition">Bitmask DP</a></li>
-                    <li><a href="dp/knapsack.html" class="hover:text-red-500 transition">Knapsack Problem</a></li>
-                    <li><a href="dp/lcs.html" class="hover:text-red-500 transition">Longest Common Subsequence</a></li>
-                    <li><a href="dp/lis.html" class="hover:text-red-500 transition">Longest Increasing Subsequence</a></li>
-                </ul>
-            </section>
+    <div class="max-w-4xl mx-auto relative">
+        <div class="roadmap-line hidden md:block"></div>
 
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-database mr-2 text-blue-500"></i> Data Structures (DS)</h2>
-                <ul class="space-y-2">
-                    <li><a href="ds/stack.html" class="hover:text-blue-500 transition">Stack & Queue</a></li>
-                    <li><a href="ds/dsu.html" class="hover:text-blue-500 transition">Disjoint Set Union (DSU)</a></li>
-                    <li><a href="ds/fenwick.html" class="hover:text-blue-500 transition">Fenwick Tree (BIT)</a></li>
-                    <li><a href="ds/segment-tree.html" class="hover:text-blue-500 transition">Segment Tree</a></li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-project-diagram mr-2 text-green-500"></i> Graph Theory</h2>
-                <ul class="space-y-2">
-                    <li><a href="graph/bfs.html" class="hover:text-green-500 transition">BFS & DFS</a></li>
-                    <li><a href="graph/dijkstra.html" class="hover:text-green-500 transition">Dijkstra's Algorithm</a></li>
-                    <li><a href="graph/mst.html" class="hover:text-green-500 transition">Minimum Spanning Tree</a></li>
-                    <li><a href="graph/maxflow.html" class="hover:text-green-500 transition">Max Flow & Matching</a></li>
-                    <li><a href="graph/scc.html" class="hover:text-green-500 transition">Strongly Connected Comp.</a></li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-calculator mr-2 text-yellow-500"></i> Mathematics</h2>
-                <ul class="space-y-2">
-                    <li><a href="math/gcd.html" class="hover:text-yellow-500 transition">GCD & LCM</a></li>
-                    <li><a href="math/sieve.html" class="hover:text-yellow-500 transition">Sieve of Eratosthenes</a></li>
-                    <li><a href="math/binary-exp.html" class="hover:text-yellow-500 transition">Binary Exponentiation</a></li>
-                    <li><a href="math/ncr.html" class="hover:text-yellow-500 transition">Combinatorics (nCr)</a></li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-font mr-2 text-purple-500"></i> String Algorithms</h2>
-                <ul class="space-y-2">
-                    <li><a href="string/kmp.html" class="hover:text-purple-500 transition">KMP Algorithm</a></li>
-                    <li><a href="string/hash.html" class="hover:text-purple-500 transition">String Hashing</a></li>
-                    <li><a href="string/z.html" class="hover:text-purple-500 transition">Z Algorithm</a></li>
-                    <li><a href="string/aho.html" class="hover:text-purple-500 transition">Aho-Corasick</a></li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-500">
-                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-sort-amount-up mr-2 text-orange-500"></i> Sorting & Search</h2>
-                <ul class="space-y-2">
-                    <li><a href="sorting/binary-search.html" class="hover:text-orange-500 transition">Binary Search</a></li>
-                    <li><a href="sorting/merge.html" class="hover:text-orange-500 transition">Merge Sort</a></li>
-                    <li><a href="sorting/quick.html" class="hover:text-orange-500 transition">Quick Sort</a></li>
-                </ul>
-            </section>
-
+        <div class="mb-12 flex flex-col md:flex-row items-center justify-between w-full">
+            <div class="md:w-5/12 bg-white p-5 rounded-xl shadow-lg border-2 border-yellow-400 node-box">
+                <h3 class="font-bold text-yellow-600 mb-2 uppercase text-sm">Basic Definitions</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="newbie/implementation.html" class="skill-tag">Implementation</a>
+                    <a href="newbie/brute-force.html" class="skill-tag">Brute Force</a>
+                    <a href="newbie/complexity.html" class="skill-tag text-red-500 italic font-bold">Complexity (O)</a>
+                </div>
+            </div>
+            <div class="hidden md:block w-2/12 text-center z-10">
+                <div class="w-8 h-8 bg-yellow-400 rounded-full mx-auto border-4 border-white shadow"></div>
+            </div>
+            <div class="md:w-5/12 mt-4 md:mt-0 bg-blue-50 p-5 rounded-xl border border-blue-200">
+                <h3 class="font-bold text-blue-600 mb-2 uppercase text-sm">Basic Algorithms 1</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="newbie/recursion.html" class="skill-tag">Recursion</a>
+                    <a href="newbie/backtrack.html" class="skill-tag">Backtrack</a>
+                    <a href="newbie/stress-test.html" class="skill-tag font-bold">Stress Test</a>
+                </div>
+            </div>
         </div>
-    </main>
 
-    <footer class="text-center py-6 text-gray-500 border-t">
-        &copy; 2026 Competitive Programming Roadmap
+        <div class="mb-12 flex flex-col md:flex-row-reverse items-center justify-between w-full">
+            <div class="md:w-5/12 bg-white p-5 rounded-xl shadow-lg border-2 border-green-400 node-box">
+                <h3 class="font-bold text-green-600 mb-2 uppercase text-sm">Basic Number Theory</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="math/gcd.html" class="skill-tag underline">Modulo & GCD</a>
+                    <a href="math/sieve.html" class="skill-tag">Prime Sieve</a>
+                    <a href="math/binary-exp.html" class="skill-tag">Binary Exponentiation</a>
+                    <a href="math/ncr.html" class="skill-tag">nCr</a>
+                </div>
+            </div>
+            <div class="hidden md:block w-2/12 text-center z-10">
+                <div class="w-8 h-8 bg-green-400 rounded-full mx-auto border-4 border-white shadow"></div>
+            </div>
+            <div class="md:w-5/12 mt-4 md:mt-0 bg-green-50 p-5 rounded-xl border border-green-200">
+                <h3 class="font-bold text-green-700 mb-2 uppercase text-sm">Sort & Search</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="sorting/merge.html" class="skill-tag">Merge Sort</a>
+                    <a href="sorting/quick.html" class="skill-tag">Quick Sort</a>
+                    <a href="sorting/binary-search.html" class="skill-tag font-bold text-blue-600">Binary Search</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12 flex flex-col md:flex-row items-center justify-between w-full">
+            <div class="md:w-5/12 bg-white p-5 rounded-xl shadow-lg border-2 border-indigo-400 node-box">
+                <h3 class="font-bold text-indigo-600 mb-2 uppercase text-sm">Data Structures</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="ds/stack.html" class="skill-tag">Stack & Queue</a>
+                    <a href="ds/dsu.html" class="skill-tag font-bold">DSU</a>
+                    <a href="ds/fenwick.html" class="skill-tag">Fenwick Tree</a>
+                    <a href="ds/segment-tree.html" class="skill-tag">Segment Tree</a>
+                </div>
+            </div>
+            <div class="hidden md:block w-2/12 text-center z-10">
+                <div class="w-8 h-8 bg-indigo-400 rounded-full mx-auto border-4 border-white shadow"></div>
+            </div>
+            <div class="md:w-5/12 mt-4 md:mt-0 bg-indigo-50 p-5 rounded-xl border border-indigo-200">
+                <h3 class="font-bold text-indigo-700 mb-2 uppercase text-sm">Graph Theory</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="graph/bfs.html" class="skill-tag">BFS/DFS</a>
+                    <a href="graph/dijkstra.html" class="skill-tag font-bold">Dijkstra</a>
+                    <a href="graph/mst.html" class="skill-tag">MST</a>
+                    <a href="graph/scc.html" class="skill-tag">SCC</a>
+                    <a href="graph/topo.html" class="skill-tag">Topo Sort</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12 flex flex-col md:flex-row-reverse items-center justify-between w-full">
+            <div class="md:w-5/12 bg-white p-5 rounded-xl shadow-lg border-2 border-rose-400 node-box">
+                <h3 class="font-bold text-rose-600 mb-2 uppercase text-sm">Dynamic Programming</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="dp/knapsack.html" class="skill-tag font-bold">Knapsack</a>
+                    <a href="dp/lis.html" class="skill-tag">LIS / LCS</a>
+                    <a href="dp/bitmask.html" class="skill-tag">Bitmask DP</a>
+                </div>
+            </div>
+            <div class="hidden md:block w-2/12 text-center z-10">
+                <div class="w-8 h-8 bg-rose-400 rounded-full mx-auto border-4 border-white shadow"></div>
+            </div>
+            <div class="md:w-5/12 mt-4 md:mt-0 bg-rose-50 p-5 rounded-xl border border-rose-200">
+                <h3 class="font-bold text-rose-700 mb-2 uppercase text-sm">String Algorithms</h3>
+                <div class="flex flex-wrap gap-2">
+                    <a href="string/hash.html" class="skill-tag font-bold">Hashing</a>
+                    <a href="string/kmp.html" class="skill-tag">KMP / Z</a>
+                    <a href="string/aho.html" class="skill-tag">Aho-Corasick</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-slate-400 mt-20 italic">
+        "May the Force of $O(1)$ be with you."
     </footer>
 
 </body>
