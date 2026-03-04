@@ -3,106 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brute Force - CP Handbook</title>
+    <title>Brute Force - CP Roadmap</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .code-container { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: rgba(255, 255, 255, 0.2); color: white; }
+        [lang="en"] { display: none; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 leading-relaxed">
+<body class="bg-slate-50 text-slate-800 leading-relaxed transition-all">
 
     <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../index.html" class="text-indigo-600 font-bold flex items-center">
-                <i class="fas fa-arrow-left mr-2"></i> Quay lại Roadmap
+                <i class="fas fa-arrow-left mr-2"></i> <span class="vi">Quay lại Roadmap</span><span class="en">Back to Roadmap</span>
             </a>
-            <span class="text-slate-400 text-sm">Newbie Skills / Brute Force</span>
+            
+            <button onclick="toggleLang()" class="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full font-medium hover:bg-indigo-200 transition">
+                <i class="fas fa-globe mr-2"></i> <span class="vi">English</span><span class="en">Tiếng Việt</span>
+            </button>
         </div>
     </nav>
 
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <header class="mb-10 text-center">
-            <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Chủ đề 0.1</span>
-            <h1 class="text-4xl font-black mt-2 mb-4 text-slate-900">Brute Force (Vét cạn)</h1>
+            <h1 class="text-4xl font-black mt-2 mb-4 text-slate-900">
+                <span class="vi">Brute Force (Vét cạn)</span>
+                <span class="en">Brute Force Algorithm</span>
+            </h1>
             <div class="h-1.5 w-20 bg-orange-500 mx-auto rounded-full"></div>
         </header>
 
-        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 border border-slate-100">
+        <article class="bg-white shadow-xl rounded-2xl p-8 border border-slate-100">
             
             <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
-                    <i class="fas fa-info-circle mr-3 text-blue-500"></i> Khái niệm
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900 border-b pb-2">
+                    <i class="fas fa-info-circle mr-3 text-blue-500"></i> 
+                    <span class="vi">Khái niệm</span><span class="en">Concept</span>
                 </h2>
-                <p class="mb-4">
-                    Thuật toán **Brute Force**, hay còn gọi là thuật toán <span class="bg-yellow-100 px-1 font-medium">"trâu bò"</span>, là một phương pháp giải quyết vấn đề bằng cách thử tất cả các khả năng có thể xảy ra cho đến khi tìm ra đáp án đúng.
-                </p>
-                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 italic text-blue-800">
-                    "Đây là phương pháp đơn giản nhất và thường được sử dụng khi không có giải pháp nào nhanh hơn hoặc hiệu quả hơn."
+                <div class="vi">
+                    <p class="mb-4">Thuật toán Brute Force là phương pháp giải quyết vấn đề bằng cách thử tất cả các khả năng có thể cho đến khi tìm ra đáp án. Nó tốn thời gian nhưng đảm bảo luôn tìm thấy kết quả nếu tồn tại.</p>
+                </div>
+                <div class="en">
+                    <p class="mb-4">Brute Force is a straightforward approach to solving a problem by trying all possible solutions until the correct one is found. It is time-consuming but guarantees a result if one exists.</p>
                 </div>
             </section>
 
             <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
-                    <i class="fas fa-lightbulb mr-3 text-yellow-500"></i> Ví dụ minh họa
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900 border-b pb-2">
+                    <i class="fas fa-code mr-3 text-emerald-500"></i> 
+                    <span class="vi">Ví dụ: Tìm cặp số có tổng bằng S</span><span class="en">Example: Two Sum (S)</span>
                 </h2>
-                <p>
-                    Khi bạn quên mật khẩu của một ổ khóa 3 số (từ 000 đến 999), thuật toán Brute Force sẽ bắt đầu thử từ <strong>000, 001, 002...</strong> cho đến khi ổ khóa mở ra. Bạn chắc chắn sẽ tìm được mật khẩu, nhưng có thể phải thử tới 1,000 lần.
-                </p>
-            </section>
-
-            <section class="mb-10">
-                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
-                    <i class="fas fa-clock mr-3 text-red-500"></i> Độ phức tạp
-                </h2>
-                <p class="mb-4">
-                    Vì phải duyệt qua toàn bộ không gian nghiệm, thuật toán này tốn nhiều thời gian và bộ nhớ.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 bg-red-50 rounded-lg border border-red-100">
-                        <span class="block font-bold text-red-600 uppercase text-xs mb-1">Thời gian</span>
-                        Thường là $O(N!)$, $O(2^N)$ hoặc $O(N^k)$ với $k$ lớn.
-                    </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span class="block font-bold text-slate-600 uppercase text-xs mb-1">Giới hạn</span>
-                        Chỉ phù hợp với các bài toán có kích thước dữ liệu (N) nhỏ.
-                    </div>
+                <div class="vi mb-4 text-slate-600 italic">
+                    Bài toán: Cho mảng A gồm N phần tử và số S. Tìm cặp số (i, j) sao cho A[i] + A[j] = S.
                 </div>
-            </section>
+                <div class="en mb-4 text-slate-600 italic">
+                    Problem: Given an array A of N elements and a value S. Find a pair (i, j) such that A[i] + A[j] = S.
+                </div>
 
-            <section>
-                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
-                    <i class="fas fa-tasks mr-3 text-green-500"></i> Ứng dụng phổ biến
-                </h2>
-                <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Giải các bài toán tổ hợp:</strong> Như bài toán cái túi, bài toán xếp ba lô (khi N nhỏ).</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Tìm kiếm và khớp mẫu:</strong> Như tìm kiếm một chuỗi con trong một chuỗi dài bằng cách trượt từng ký tự.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Mật mã học:</strong> Bẻ khóa mật mã bằng cách thử tất cả các kết hợp có thể của khóa.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span><strong>Làm bộ lọc (Stress Test):</strong> Dùng code Brute Force để kiểm tra tính đúng đắn của một thuật toán tối ưu hơn.</span>
-                    </li>
-                </ul>
+                <div class="code-container rounded-xl overflow-hidden shadow-lg bg-slate-900">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy mr-1"></i> Copy
+                    </button>
+                    <pre class="p-6 text-sm text-slate-300 overflow-x-auto"><code><span class="text-rose-400">#include</span> <span class="text-emerald-400">&lt;iostream&gt;</span>
+<span class="text-rose-400">#include</span> <span class="text-emerald-400">&lt;vector&gt;</span>
+
+<span class="text-indigo-400">void</span> <span class="text-blue-400">solve</span>() {
+    <span class="text-indigo-400">int</span> n = <span class="text-orange-400">5</span>, s = <span class="text-orange-400">10</span>;
+    <span class="text-indigo-400">int</span> a[] = {<span class="text-orange-400">2, 4, 6, 8, 3</span>};
+
+    <span class="text-slate-500">// Brute Force: Thử mọi cặp (i, j)</span>
+    <span class="text-rose-400">for</span> (<span class="text-indigo-400">int</span> i = <span class="text-orange-400">0</span>; i < n; i++) {
+        <span class="text-rose-400">for</span> (<span class="text-indigo-400">int</span> j = i + <span class="text-orange-400">1</span>; j < n; j++) {
+            <span class="text-rose-400">if</span> (a[i] + a[j] == s) {
+                std::cout << a[i] << <span class="text-emerald-400">" + "</span> << a[j] << <span class="text-emerald-400">" = "</span> << s << std::endl;
+            }
+        }
+    }
+}</code></pre>
+                </div>
             </section>
 
         </article>
 
-        <footer class="mt-12 text-center text-slate-400 text-sm">
-            <p>Competitive Programming Handbook &bull; 2026</p>
+        <footer class="mt-12 text-center text-slate-400 text-xs">
+            <p>&copy; Roadmap Learning Tools</p>
         </footer>
     </main>
 
     <script>
-        window.MathJax = {
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-        };
+        // Chuyển đổi ngôn ngữ
+        function toggleLang() {
+            const body = document.body;
+            const isVi = body.getAttribute('data-lang') === 'en';
+            body.setAttribute('data-lang', isVi ? 'vi' : 'en');
+            
+            document.querySelectorAll('.vi').forEach(el => el.style.display = isVi ? 'inline-block' : 'none');
+            document.querySelectorAll('.en').forEach(el => el.style.display = isVi ? 'none' : 'inline-block');
+        }
+
+        // Sao chép code
+        function copyCode(btn) {
+            const code = btn.nextElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check text-green-400"></i> Done!';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            });
+        }
     </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
