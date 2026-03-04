@@ -1,54 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Minh CP Wiki</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP Handbook - Lộ trình luyện tập</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
 
-<div class="sidebar">
-  <h2>⚡ Minh CP Wiki</h2>
-  <input type="text" id="search" placeholder="Search algorithm...">
-</div>
+    <header class="bg-indigo-700 text-white py-12 mb-10 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-2 uppercase tracking-widest">Competitive Programming Handbook</h1>
+            <p class="text-indigo-100 italic">Hệ thống hóa kiến thức thuật toán và cấu trúc dữ liệu</p>
+        </div>
+    </header>
 
-<div class="content">
-<h1>Competitive Programming Roadmap</h1>
+    <main class="container mx-auto px-4 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-brain mr-2 text-red-500"></i> Dynamic Programming (DP)</h2>
+                <ul class="space-y-2">
+                    <li><a href="dp/bitmask.html" class="hover:text-red-500 transition">Bitmask DP</a></li>
+                    <li><a href="dp/knapsack.html" class="hover:text-red-500 transition">Knapsack Problem</a></li>
+                    <li><a href="dp/lcs.html" class="hover:text-red-500 transition">Longest Common Subsequence</a></li>
+                    <li><a href="dp/lis.html" class="hover:text-red-500 transition">Longest Increasing Subsequence</a></li>
+                </ul>
+            </section>
 
-<ul id="algoList">
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-database mr-2 text-blue-500"></i> Data Structures (DS)</h2>
+                <ul class="space-y-2">
+                    <li><a href="ds/stack.html" class="hover:text-blue-500 transition">Stack & Queue</a></li>
+                    <li><a href="ds/dsu.html" class="hover:text-blue-500 transition">Disjoint Set Union (DSU)</a></li>
+                    <li><a href="ds/fenwick.html" class="hover:text-blue-500 transition">Fenwick Tree (BIT)</a></li>
+                    <li><a href="ds/segment-tree.html" class="hover:text-blue-500 transition">Segment Tree</a></li>
+                </ul>
+            </section>
 
-<li><a href="math/gcd.html">GCD</a></li>
-<li><a href="math/binary-exp.html">Binary Exponentiation</a></li>
-<li><a href="math/sieve.html">Sieve</a></li>
-<li><a href="math/ncr.html">nCr</a></li>
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-project-diagram mr-2 text-green-500"></i> Graph Theory</h2>
+                <ul class="space-y-2">
+                    <li><a href="graph/bfs.html" class="hover:text-green-500 transition">BFS & DFS</a></li>
+                    <li><a href="graph/dijkstra.html" class="hover:text-green-500 transition">Dijkstra's Algorithm</a></li>
+                    <li><a href="graph/mst.html" class="hover:text-green-500 transition">Minimum Spanning Tree</a></li>
+                    <li><a href="graph/maxflow.html" class="hover:text-green-500 transition">Max Flow & Matching</a></li>
+                    <li><a href="graph/scc.html" class="hover:text-green-500 transition">Strongly Connected Comp.</a></li>
+                </ul>
+            </section>
 
-<li><a href="ds/vector.html">Vector</a></li>
-<li><a href="ds/stack.html">Stack</a></li>
-<li><a href="ds/queue.html">Queue</a></li>
-<li><a href="ds/dsu.html">Disjoint Set Union</a></li>
-<li><a href="ds/segment-tree.html">Segment Tree</a></li>
-<li><a href="ds/fenwick.html">Fenwick Tree</a></li>
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-calculator mr-2 text-yellow-500"></i> Mathematics</h2>
+                <ul class="space-y-2">
+                    <li><a href="math/gcd.html" class="hover:text-yellow-500 transition">GCD & LCM</a></li>
+                    <li><a href="math/sieve.html" class="hover:text-yellow-500 transition">Sieve of Eratosthenes</a></li>
+                    <li><a href="math/binary-exp.html" class="hover:text-yellow-500 transition">Binary Exponentiation</a></li>
+                    <li><a href="math/ncr.html" class="hover:text-yellow-500 transition">Combinatorics (nCr)</a></li>
+                </ul>
+            </section>
 
-<li><a href="graph/bfs.html">BFS</a></li>
-<li><a href="graph/dfs.html">DFS</a></li>
-<li><a href="graph/dijkstra.html">Dijkstra</a></li>
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-font mr-2 text-purple-500"></i> String Algorithms</h2>
+                <ul class="space-y-2">
+                    <li><a href="string/kmp.html" class="hover:text-purple-500 transition">KMP Algorithm</a></li>
+                    <li><a href="string/hash.html" class="hover:text-purple-500 transition">String Hashing</a></li>
+                    <li><a href="string/z.html" class="hover:text-purple-500 transition">Z Algorithm</a></li>
+                    <li><a href="string/aho.html" class="hover:text-purple-500 transition">Aho-Corasick</a></li>
+                </ul>
+            </section>
 
-</ul>
+            <section class="bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-500">
+                <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-sort-amount-up mr-2 text-orange-500"></i> Sorting & Search</h2>
+                <ul class="space-y-2">
+                    <li><a href="sorting/binary-search.html" class="hover:text-orange-500 transition">Binary Search</a></li>
+                    <li><a href="sorting/merge.html" class="hover:text-orange-500 transition">Merge Sort</a></li>
+                    <li><a href="sorting/quick.html" class="hover:text-orange-500 transition">Quick Sort</a></li>
+                </ul>
+            </section>
 
-</div>
+        </div>
+    </main>
 
-<script>
-const search = document.getElementById("search");
-const list = document.getElementById("algoList").getElementsByTagName("li");
-
-search.addEventListener("keyup", function(){
-  let filter = search.value.toLowerCase();
-  for(let i=0;i<list.length;i++){
-    let text = list[i].innerText.toLowerCase();
-    list[i].style.display = text.includes(filter) ? "" : "none";
-  }
-});
-</script>
+    <footer class="text-center py-6 text-gray-500 border-t">
+        &copy; 2026 Competitive Programming Roadmap
+    </footer>
 
 </body>
 </html>
