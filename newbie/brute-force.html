@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brute Force - CP Handbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
 
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-indigo-600 font-bold flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Quay lại Roadmap
+            </a>
+            <span class="text-slate-400 text-sm">Newbie Skills / Brute Force</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+        <header class="mb-10 text-center">
+            <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Chủ đề 0.1</span>
+            <h1 class="text-4xl font-black mt-2 mb-4 text-slate-900">Brute Force (Vét cạn)</h1>
+            <div class="h-1.5 w-20 bg-orange-500 mx-auto rounded-full"></div>
+        </header>
+
+        <article class="bg-white shadow-xl rounded-2xl p-8 md:p-12 border border-slate-100">
+            
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
+                    <i class="fas fa-info-circle mr-3 text-blue-500"></i> Khái niệm
+                </h2>
+                <p class="mb-4">
+                    Thuật toán **Brute Force**, hay còn gọi là thuật toán <span class="bg-yellow-100 px-1 font-medium">"trâu bò"</span>, là một phương pháp giải quyết vấn đề bằng cách thử tất cả các khả năng có thể xảy ra cho đến khi tìm ra đáp án đúng.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 italic text-blue-800">
+                    "Đây là phương pháp đơn giản nhất và thường được sử dụng khi không có giải pháp nào nhanh hơn hoặc hiệu quả hơn."
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
+                    <i class="fas fa-lightbulb mr-3 text-yellow-500"></i> Ví dụ minh họa
+                </h2>
+                <p>
+                    Khi bạn quên mật khẩu của một ổ khóa 3 số (từ 000 đến 999), thuật toán Brute Force sẽ bắt đầu thử từ <strong>000, 001, 002...</strong> cho đến khi ổ khóa mở ra. Bạn chắc chắn sẽ tìm được mật khẩu, nhưng có thể phải thử tới 1,000 lần.
+                </p>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
+                    <i class="fas fa-clock mr-3 text-red-500"></i> Độ phức tạp
+                </h2>
+                <p class="mb-4">
+                    Vì phải duyệt qua toàn bộ không gian nghiệm, thuật toán này tốn nhiều thời gian và bộ nhớ.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-100">
+                        <span class="block font-bold text-red-600 uppercase text-xs mb-1">Thời gian</span>
+                        Thường là $O(N!)$, $O(2^N)$ hoặc $O(N^k)$ với $k$ lớn.
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="block font-bold text-slate-600 uppercase text-xs mb-1">Giới hạn</span>
+                        Chỉ phù hợp với các bài toán có kích thước dữ liệu (N) nhỏ.
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-slate-900">
+                    <i class="fas fa-tasks mr-3 text-green-500"></i> Ứng dụng phổ biến
+                </h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Giải các bài toán tổ hợp:</strong> Như bài toán cái túi, bài toán xếp ba lô (khi N nhỏ).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Tìm kiếm và khớp mẫu:</strong> Như tìm kiếm một chuỗi con trong một chuỗi dài bằng cách trượt từng ký tự.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Mật mã học:</strong> Bẻ khóa mật mã bằng cách thử tất cả các kết hợp có thể của khóa.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Làm bộ lọc (Stress Test):</strong> Dùng code Brute Force để kiểm tra tính đúng đắn của một thuật toán tối ưu hơn.</span>
+                    </li>
+                </ul>
+            </section>
+
+        </article>
+
+        <footer class="mt-12 text-center text-slate-400 text-sm">
+            <p>Competitive Programming Handbook &bull; 2026</p>
+        </footer>
+    </main>
+
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
